@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main{
 	
 	public static final Scanner sc = new Scanner(System.in);
+	private int races;
 	
 	public static void main(String[] args){
 		
@@ -79,48 +80,56 @@ public class Main{
 		
 		int tm = Integer.parseInt(sc.nextLine());
 		
+		String team = "";
+		
 		switch (tm){
 			case 1:
-			String team = "Scuderia Ferrari";
+			team = "Scuderia Ferrari"; //SCUDERIA_FERRARI; 
 			break;
 			case 2:
-			String team = "Mclaren Fi Team";
+			team = "Mclaren Fi Team";
 			break;
 			case 3:
-			String team = "Red Bull Racing";
+			team = "Red Bull Racing";
 			break;
 			case 4:
-			String team = "Mercedes Amg";
+			team = "Mercedes Amg";
 			break;
 			case 5:
-			String team = "Racing Point";
+			team = "Racing Point";
 			break;
 			case 6:
-			String team = "Alfa Romeo";
+			team = "Alfa Romeo";
 			break;
 			case 7:
-			String team = "Renault";
+			team = "Renault";
 			break;
 			case 8:
-			String team = "Williams";
+			team = "Williams";
 			break;
 		}
 		
 		System.out.println("");
 		System.out.println("Type the time in seconds of each of the races");
 		
-		int[] race = new int[races];
+		int[] scores= new int[championshipX.getRaces()];
 		
-		for(int i = 0; i<race.length; i++){
-			System.out.println("Race "+(i+1);
-			race[i] = Integer.parseInt(sc.nextLine());
+		for(int i = 0; i<scores.length; i++){
+			System.out.println("Race score "+(i+1));
+			scores[i] = Integer.parseInt(sc.nextLine());
 		}
 		
 		String message;
 		
-		message = championshipX.addPilot(name, age, team, race[]);
+		message = championshipX.addPilot(name, age, team, scores);
 		
 		System.out.println(message);
+		
+	}
+	
+	public void showTimes(Championship championshipX){
+		
+		System.out.println("The average time of each pilot is:\n"+championshipX.showAverangeTimes());
 		
 	}
 }
