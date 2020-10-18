@@ -76,15 +76,15 @@ public class Championship{
 	/**
     *<b>Name:showAverangeTimes</b><br>
     *<b>Post:</b> Show the average time of each pilot's races
-	*@param cont int. Variable with the number of pilots.
     *@return message Show the average time of each pilot's races
-    */
-	public String showAverangeTimes(int cont){
+	*/
+	public String showAverangeTimes(){
 		
-		String out;
-		int i = cont;
+		String out = " ";
 		
-		out ="Pilot "+pilots[i].getName()+"\n average time: "+pilots[i].calculateAverage(pilots[i].getScores())+"\n --------------------------------------";
+		for(int i = 0; i < pilots.length; i++){
+			out +="Pilot "+pilots[i].getName()+"\n average time: "+pilots[i].calculateAverage(pilots[i].getScores())+"\n --------------------------------------\n";
+		}
 		
 		return out;
 	}
@@ -103,4 +103,16 @@ public class Championship{
 	public int getRaces(){
 		return races;
 	}
+	
+	/*
+	public String showAverangeTimes(int cont){
+		
+		String out;
+		int i = cont;
+		
+		out ="Pilot "+pilots[i].getName()+"\n average time: "+pilots[i].calculateAverage(pilots[i].getScores())+"\n --------------------------------------";
+		
+		return out;
+	}
+    */
 }

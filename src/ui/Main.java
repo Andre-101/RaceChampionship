@@ -139,6 +139,14 @@ public class Main{
 	*/
 	public void showTimes(Championship championshipX){
 		
+		System.out.println("The average time of each pilot is: \n --------------------------------------");
+		
+		System.out.println(championshipX.showAverangeTimes());
+		
+	}
+	/*
+	public void showTimes(Championship championshipX){
+		
 		System.out.println("The average time of each pilot is:");
 		
 		for(int i = 0; i < cantPilots; i++){
@@ -146,4 +154,5 @@ public class Main{
 			System.out.println(championshipX.showAverangeTimes(cont));
 		}
 	}
+	*/
 }

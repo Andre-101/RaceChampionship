@@ -70,7 +70,7 @@ public class Pilot{
 		return time; 
 	}
 	
-	//setters and getter
+	//setters and getters
 	public void setName(String name){
 		this.name = name;
 	}
