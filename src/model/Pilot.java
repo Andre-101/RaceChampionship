@@ -14,7 +14,7 @@ public class Pilot{
 	private String team;
 	private int[] scores;
 	private int sum = 0;
-	private double average = 0.0;
+	private String average = "";
 	
 	//Builder
 	public Pilot(String xName, int xAge, String xTeam, int[] xScores){
@@ -33,15 +33,41 @@ public class Pilot{
 	*@param scores[] int. Variable with the amount of time each driver can get in each race. scores[]!=null
     *@return double variable that keep the average time of the races of each pilot.
     */
-	public double calculateAverage(int[] scores){
+	public String calculateAverage(int[] scores){
 		
 		for(int i = 0; i < scores.length; i++){
 			sum += scores[i];
 		}
-		average = sum / scores.length;
+		double cant = sum/scores.length;
+		 
+		 int num = (int)cant;
+		 
+		average = timeConverter(num);
 		
 		return average;
 		
+	}
+	
+	/**
+    *<b>Name:timeConverter</b><br>
+    *This method allows you to convert the time from seconds to hours, minutes, and seconds.
+    *<b>Post:</b> The time conversion has been done.
+	*@param num double. Variable with the amount of time in second each driver. num!=null.
+    *@return double variable that keep the time in second of each pilot.
+    */
+	
+	public String timeConverter(int num){
+		
+		String time;
+		int hor,min,seg;
+		
+		hor=num/3600;
+        min=(num-(3600*hor))/60;
+        seg=num-((hor*3600)+(min*60));
+		
+		time = hor+" h : "+min+" m : "+seg+" s";
+		
+		return time; 
 	}
 	
 	//setters and getter
@@ -73,10 +99,10 @@ public class Pilot{
 		return sum;
 	}
 	
-	public void setAverage(double average){
+	public void setAverage(String average){
 		this.average = average;
 	}
-	public double getAverage(){
+	public String getAverage(){
 		return average;
 	}
 }

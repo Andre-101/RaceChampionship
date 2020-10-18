@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main{
 	
 	public static final Scanner sc = new Scanner(System.in);
+	private final static int cantPilots = 15;
 	private int races;
 	
 	public static void main(String[] args){
@@ -15,13 +16,16 @@ public class Main{
 		System.out.println("");
 		System.out.println("Please enter the information of the pilots");
 		
-		for(int i = 0; i < 15; i++){
+		for(int i = 0; i < cantPilots; i++){
 			System.out.println("");
 			System.out.println("Pilot "+(i+1));
 			
 			addPilots(champions);
 		}
 		
+		Main ppal= new Main();
+		
+		ppal.showTimes(champions);
 	}
 	
 	/**
@@ -51,7 +55,7 @@ public class Main{
 	*<b>Name:addPilots</b><br>
 	*this method allows to record the information of each pilot
 	*<b>Post:</b>The pilots has been created
-	*@return championshipX Championship object championshipX. championshipX!=null
+	*@param championshipX Championship object championshipX. championshipX!=null
 	*/
 	public static void addPilots(Championship championshipX){
 		
@@ -84,7 +88,7 @@ public class Main{
 		
 		switch (tm){
 			case 1:
-			team = "Scuderia Ferrari"; //SCUDERIA_FERRARI; 
+			team = "Scuderia Ferrari";
 			break;
 			case 2:
 			team = "Mclaren Fi Team";
@@ -127,9 +131,19 @@ public class Main{
 		
 	}
 	
+	/**
+	*<b>Name:showTimes</b><br>
+	*this method allows you to see the information of each pilot
+	*<b>Post:</b>The pilot's information has been saw
+	*@param championshipX Championship object championshipX. championshipX!=null
+	*/
 	public void showTimes(Championship championshipX){
 		
-		System.out.println("The average time of each pilot is:\n"+championshipX.showAverangeTimes());
+		System.out.println("The average time of each pilot is:");
 		
+		for(int i = 0; i < cantPilots; i++){
+			int cont = i;
+			System.out.println(championshipX.showAverangeTimes(cont));
+		}
 	}
 }
